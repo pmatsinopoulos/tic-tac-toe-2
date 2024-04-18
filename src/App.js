@@ -37,24 +37,26 @@ export default function Board() {
       const firstValue = newArray[i][0]
       if (firstValue === '') {
         continue;
-      } else {
-        let j = 1;
-        for (;j < columns && newArray[i][j] === firstValue; j++) {}
-        result = (j === columns);
       }
+
+      let j = 1;
+      for (;j < columns && newArray[i][j] === firstValue; j++);
+
+      result = (j === columns);
     }
 
     // Check each column
     if (!result) {
       for (let j = 0; j < columns && !result; j++) {
-        const firstValue = newArray[0][j]
+        const firstValue = newArray[0][j];
         if (firstValue === '') {
           continue;
-        } else {
-          let i = 1;
-          for (;i < rows && newArray[i][j] === firstValue; i++) {}
-          result = (i === rows);
         }
+
+        let i = 1;
+        for (;i < rows && newArray[i][j] === firstValue; i++);
+
+        result = (i === rows);
       }
     }
 
@@ -64,12 +66,13 @@ export default function Board() {
         const firstValue = newArray[i][0];
         if (firstValue === '') {
           continue;
-        } else {
-          let j = 1;
-          let ii = i + 1;
-          for (;j < columns && ii < rows && newArray[ii][j] === firstValue; j++, ii++) {}
-          result = (j === columns);
         }
+
+        let j = 1;
+        let ii = i + 1;
+        for (;j < columns && ii < rows && newArray[ii][j] === firstValue; j++, ii++);
+
+        result = (j === columns);
       }
     }
 
@@ -79,12 +82,13 @@ export default function Board() {
         const firstValue = newArray[i][0];
         if (firstValue === '') {
           continue;
-        } else {
-          let j = 1;
-          let ii = i - 1;
-          for (;j < columns && ii > -1 && newArray[ii][j] === firstValue; j++, ii--) {}
-          result = (j === columns);
         }
+
+        let j = 1;
+        let ii = i - 1;
+        for (;j < columns && ii > -1 && newArray[ii][j] === firstValue; j++, ii--);
+
+        result = (j === columns);
       }
     }
 
@@ -130,12 +134,12 @@ export default function Board() {
         <Square value={squareValues[2][2]} clickHandler={() => clickHandler(2, 2)}  />
       </div>
       <div>
-      {winner && (
-        <>
-          <div>Winner is: {lastValue}</div>
-          <button onClick={restart}>Restart</button>
-        </>
-      )}
+        {winner && (
+          <>
+            <div>Winner is: {lastValue}</div>
+          </>
+        )}
+        <button className="main-action-button" onClick={restart}>Restart</button>
       </div>
     </>
   )

@@ -88,3 +88,8 @@ body {
 .game-info {
   margin-left: 20px;
 }
+
+.main-action-button {
+  padding: 10px;
+  margin: 10px;
+}
