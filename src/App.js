@@ -118,21 +118,18 @@ export default function Board() {
 
   return (
     <>
-      <div className="board-row">
-        <Square value={squareValues[0][0]} clickHandler={() => clickHandler(0, 0)} />
-        <Square value={squareValues[0][1]} clickHandler={() => clickHandler(0, 1)} />
-        <Square value={squareValues[0][2]} clickHandler={() => clickHandler(0, 2)} />
-      </div>
-      <div className="board-row">
-        <Square value={squareValues[1][0]} clickHandler={() => clickHandler(1, 0)}  />
-        <Square value={squareValues[1][1]} clickHandler={() => clickHandler(1, 1)}  />
-        <Square value={squareValues[1][2]} clickHandler={() => clickHandler(1, 2)}  />
-      </div>
-      <div className="board-row">
-        <Square value={squareValues[2][0]} clickHandler={() => clickHandler(2, 0)}  />
-        <Square value={squareValues[2][1]} clickHandler={() => clickHandler(2, 1)}  />
-        <Square value={squareValues[2][2]} clickHandler={() => clickHandler(2, 2)}  />
-      </div>
+      {squareValues.map((row, i) => {
+        return (
+          <div className="board-row">
+            {row.map((column, j) => {
+              return (
+                <Square value={column} clickHandler={() => clickHandler(i, j)} />
+              );
+            })}
+          </div>
+        );
+      })}
+
       <div>
         {winner && (
           <>
