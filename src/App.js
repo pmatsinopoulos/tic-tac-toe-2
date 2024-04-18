@@ -120,10 +120,10 @@ export default function Board() {
     <>
       {squareValues.map((row, i) => {
         return (
-          <div className="board-row">
+          <div key={`board-row-${i}`} className="board-row">
             {row.map((column, j) => {
               return (
-                <Square value={column} clickHandler={() => clickHandler(i, j)} />
+                <Square key={`square-${i}-${j}`} value={column} clickHandler={() => clickHandler(i, j)} />
               );
             })}
           </div>
