@@ -1,0 +1,13 @@
+{
+  "name": "react.dev",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Panagiotis Matsinopoulos",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  }
+}
