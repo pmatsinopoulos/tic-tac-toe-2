@@ -145,7 +145,7 @@ export default function Board() {
             <div>Winner is: {lastValue}</div>
           </>
         )}
-        <button className="main-action-button" onClick={restart}>Restart</button>
+        <button className="main-action-button" onClick={restart}>Reset</button>
       </div>
     </>
   )

@@ -108,5 +108,5 @@ export default function Board() {
                 React.createElement("div", null,
                     "Winner is: ",
                     lastValue))),
-            React.createElement("button", { className: "main-action-button", onClick: restart }, "Restart"))));
+            React.createElement("button", { className: "main-action-button", onClick: restart }, "Reset"))));
 }
